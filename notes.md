@@ -34,3 +34,19 @@ Rename the `State` interface in app/reducers/index.ts to `AppState` to make clea
 Provide the store to the login component
 
 ![image-20230206111017605](assets/image-20230206111017605.png)
+
+### 9. Defining NgRx Actions Using Action Creators
+
+Naming convention for actions
+
+[dispatch source] Event name
+
+dispatch source - where the action is coming from
+
+Event - event or command that the action corresponds to
+
+![image-20230206114043005](assets/image-20230206114043005.png)
+
+The `props` portion of this defines the type of payload that should be sent with the action
+
+![image-20230206131808693](assets/image-20230206131808693.png)
