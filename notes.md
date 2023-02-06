@@ -63,3 +63,22 @@ export {AuthActions};
 
 This is a very useful trick for grouping related actions together and making them accessible across the app.
 
+### 11. NgRx Reducers
+
+initialAuthState will be what is in the auth state by default
+
+We also add how to modify the sate when the login action has been dispatched.
+
+![image-20230206163024868](assets/image-20230206163024868.png)
+
+![image-20230206163248526](assets/image-20230206163248526.png)
+
+### 12. Key concepts summary - tracing ngrx actions and reducers
+
+Rewriting the login() function in login.component.ts for debugging purposes
+
+![image-20230206163836649](assets/image-20230206163836649.png)
+
+And auth/reducers/index.ts
+
+![image-20230206163905936](assets/image-20230206163905936.png)
