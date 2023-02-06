@@ -50,3 +50,16 @@ Event - event or command that the action corresponds to
 The `props` portion of this defines the type of payload that should be sent with the action
 
 ![image-20230206131808693](assets/image-20230206131808693.png)
+
+### 10. Grouping Actions Together with Action Types
+
+We create a file action-types.ts in the auth folder and export everything in auth.actions.ts like so
+
+```typescript
+import * as AuthActions from './auth.actions';
+
+export {AuthActions};
+```
+
+This is a very useful trick for grouping related actions together and making them accessible across the app.
+
