@@ -264,3 +264,22 @@ We will also enable **strictActionImmutability** - ensure our code does not acci
 ![image-20230215154325248](assets/image-20230215154325248.png)
 
 **Depending on the version of Angular you are using these may already default to true**
+
+### 24. NgRx Metareducers
+
+The main difference between metareducer and reducer is that metareducers are processed before the main reducers
+
+- For example on dispatch of login action any metareducers are going to be triggered before handling the login action in the authReducer
+
+app > reducers > index.ts
+
+We shall implement our own metareducer logger(reducer) as follows
+
+- The metareducer should return a reducer, the reducer we specify here is going to be the normal reducer.
+- Note that the metareducers run in the order specified in the array highlighted
+
+![image-20230215155529044](assets/image-20230215155529044.png)
+
+The result is that our states just before the actions are dispatched are being logged to the console:
+
+![image-20230215155814530](assets/image-20230215155814530.png)
