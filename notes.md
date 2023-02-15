@@ -205,7 +205,18 @@ app.module.ts
 - many side effects result in the dispatch of another action (Eg. response received from a backend request that needs to be added to the store)
 - This particular effect does not need to dispatch an action so we add `{dispatch: false}` as an argument to createEffect.
   - **Without this you may accidentally create an infinite loop**
+  - For this reason you should always stop the server while developing side effects
 
 - using createEffect we also have built in error handling and don't have to manually suscribe to our login observable.
 
 ![image-20230215134834345](assets/image-20230215134834345.png)
+
+### 21. Implementing the Logout Effect
+
+![image-20230215140201585](assets/image-20230215140201585.png)
+
+In addition we are going to ensure that the user remains logged in between browser refreshes
+
+app.component.ts
+
+![image-20230215140215227](assets/image-20230215140215227.png)
