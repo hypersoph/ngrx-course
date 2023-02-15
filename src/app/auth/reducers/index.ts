@@ -9,11 +9,12 @@ import {
 } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 import { AuthActions } from '../action-types';
+import { User } from '../model/user.model';
 
 export const authFeatureKey = 'auth';
 
 export interface AuthState {
-  user: any;
+  user: User;
 }
 
 export const initialAuthState: AuthState = {
