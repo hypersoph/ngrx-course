@@ -106,3 +106,28 @@ Inject the store to the component by adding it to the constructor
 ![image-20230215095517767](assets/image-20230215095517767.png)
 
 ![image-20230215095531636](assets/image-20230215095531636.png)
+
+This implementation will always work but is inefficient as eg. the same value of true will be emitted to isLoggedIn$ several times through the application run, every time the store changes. We only want to update the values when the auth state changes. To do this, we will use NgRx selectors.
+
+### 14. NgRx Selectors
+
+auth.selectors.ts
+
+![image-20230215101004226](assets/image-20230215101004226.png)
+
+The first argument of createSelector is the slice of state we want
+
+The second argument is a projector function which computes the value of isLoggedIn that we want. In our case we want it to be true if auth.user exists false otherwise.
+
+Using this selector, the computation will only run again if the auth state changes. The results of each calculation will be kept in memory.
+
+---
+
+createSelector can also take a selector is the first argument, in which case the projection function will have access to the output of the selector. We use this to compute the isLoggedOut value.
+
+![image-20230215101415903](assets/image-20230215101415903.png)
+
+app.component.ts
+
+![image-20230215101725652](assets/image-20230215101725652.png)
+
