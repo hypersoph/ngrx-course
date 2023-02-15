@@ -82,3 +82,11 @@ Rewriting the login() function in login.component.ts for debugging purposes
 And auth/reducers/index.ts
 
 ![image-20230206163905936](assets/image-20230206163905936.png)
+
+Note the use of the `debugger` statement to pause execution at those points
+
+- we click on login
+- the component login() function is called
+- a login action is dispatched
+- the corresponding reducer is called
+- the store is modified
