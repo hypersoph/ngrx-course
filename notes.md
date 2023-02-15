@@ -90,3 +90,19 @@ Note the use of the `debugger` statement to pause execution at those points
 - a login action is dispatched
 - the corresponding reducer is called
 - the store is modified
+
+## Section 3: NgRx Key Concepts - Selectors and Effects
+
+### 13. How to Query the Store Data
+
+We are going to show/hide the login/logout buttons depending on the auth state
+
+**Use the convention of adding a $ sign at the end of a variable name for observable variables.**
+
+Inject the store to the component by adding it to the constructor
+
+![image-20230215095817470](assets/image-20230215095817470.png)
+
+![image-20230215095517767](assets/image-20230215095517767.png)
+
+![image-20230215095531636](assets/image-20230215095531636.png)
