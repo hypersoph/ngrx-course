@@ -140,3 +140,17 @@ With a feature selector we will be doing the same thing but in a type safe way
 ![image-20230215103244842](assets/image-20230215103244842.png)
 
 ![image-20230215103550907](assets/image-20230215103550907.png)
+
+### 16. Implementing User Logout
+
+app.component.ts
+
+When logout button is clicked a logout action should be dispatched
+
+![image-20230215104759601](assets/image-20230215104759601.png)
+
+index.ts > authReducer
+
+Adding another reducer to define how to modify the auth state
+
+![image-20230215104554026](assets/image-20230215104554026.png)
