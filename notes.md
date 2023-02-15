@@ -196,3 +196,16 @@ app.module.ts
 ![image-20230215132850352](assets/image-20230215132850352.png)
 
 ![image-20230215132918044](assets/image-20230215132918044.png)
+
+### 20. NgRx Effects Step by Step
+
+- Using **createEffect()** from ngrx effects is a much better way of implementing effects
+
+- we can specify the type of the action thereby making the user property available inside our tap() function and adding **type safety**
+- many side effects result in the dispatch of another action (Eg. response received from a backend request that needs to be added to the store)
+- This particular effect does not need to dispatch an action so we add `{dispatch: false}` as an argument to createEffect.
+  - **Without this you may accidentally create an infinite loop**
+
+- using createEffect we also have built in error handling and don't have to manually suscribe to our login observable.
+
+![image-20230215134834345](assets/image-20230215134834345.png)
