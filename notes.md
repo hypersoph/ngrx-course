@@ -172,3 +172,13 @@ app.module.ts
 Specify that the courses route is protected by the AuthGuard
 
 ![image-20230215111245649](C:\Users\Sophia\AppData\Roaming\Typora\typora-user-images\image-20230215111245649.png)
+
+### 18. Introduction to NgRx Effects
+
+auth.module.ts
+
+![image-20230215123257134](assets/image-20230215123257134.png)
+
+app.module.ts
+
+**![image-20230215123311747](assets/image-20230215123311747.png)**
