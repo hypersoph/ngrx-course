@@ -154,3 +154,21 @@ index.ts > authReducer
 Adding another reducer to define how to modify the auth state
 
 ![image-20230215104554026](assets/image-20230215104554026.png)
+
+### 17. Implementing a Router Authentication Guard
+
+We will create an authentication guard which will redirect the user to the login page if they are not logged in.
+
+Note the @Injectable() decorator on the guard which is very easy to miss. If this is not added you will get an NG0204 error.
+
+![image-20230215111112527](C:\Users\Sophia\AppData\Roaming\Typora\typora-user-images\image-20230215111112527.png)
+
+Add it to the authmodule
+
+![image-20230215111224960](C:\Users\Sophia\AppData\Roaming\Typora\typora-user-images\image-20230215111224960.png)
+
+app.module.ts
+
+Specify that the courses route is protected by the AuthGuard
+
+![image-20230215111245649](C:\Users\Sophia\AppData\Roaming\Typora\typora-user-images\image-20230215111245649.png)
