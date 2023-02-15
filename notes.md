@@ -220,3 +220,23 @@ In addition we are going to ensure that the user remains logged in between brows
 app.component.ts
 
 ![image-20230215140215227](assets/image-20230215140215227.png)
+
+## Section 4: NgRx Development Tools In Depth
+
+### 22. Setting up NgRx Router Store and the Time Traveling Debugger
+
+The time traveling redux devtools debugger allows us to travel forward and back through router states and see the changes happening to state as we navigate through the app.
+
+To set it up we need to add the state of our router to the store
+
+app.module.ts
+
+![image-20230215152338236](assets/image-20230215152338236.png)
+
+app>reducers>index.ts
+
+![image-20230215152403345](assets/image-20230215152403345.png)
+
+Click the clock looking icon in redux devtools
+
+![image-20230215152540158](assets/image-20230215152540158.png)
