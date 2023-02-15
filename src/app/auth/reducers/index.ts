@@ -13,7 +13,7 @@ import { AuthActions } from '../action-types';
 export const authFeatureKey = 'auth';
 
 export interface AuthState {
-
+  user: any;
 }
 
 export const initialAuthState: AuthState = {
@@ -21,7 +21,7 @@ export const initialAuthState: AuthState = {
 }
 
 export const reducers: ActionReducerMap<AuthState> = {
-
+  user: undefined
 };
 
 

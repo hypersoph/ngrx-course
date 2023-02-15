@@ -131,3 +131,12 @@ app.component.ts
 
 ![image-20230215101725652](assets/image-20230215101725652.png)
 
+### 15. NgRx Feature Selectors
+
+Previously we select the auth state using `state["auth"]` but this selection is not type safe and there is no intellisense when we do this
+
+With a feature selector we will be doing the same thing but in a type safe way
+
+![image-20230215103244842](assets/image-20230215103244842.png)
+
+![image-20230215103550907](assets/image-20230215103550907.png)
