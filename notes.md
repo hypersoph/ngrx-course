@@ -240,3 +240,27 @@ app>reducers>index.ts
 Click the clock looking icon in redux devtools
 
 ![image-20230215152540158](assets/image-20230215152540158.png)
+
+### 23. NgRx Runtime Checks
+
+app.module.ts
+
+![image-20230215153649320](assets/image-20230215153649320.png)
+
+This runtime check **strictStateImmutability** ensures that the state is immutable, so if you were to implement a reducer incorrectly (eg modify the state) an error would result at runtime
+
+incorrectly implemented reducer modifies the state directly:
+
+![image-20230215153548428](assets/image-20230215153548428.png)
+
+![image-20230215153432200](assets/image-20230215153432200.png)
+
+We will also enable **strictActionImmutability** - ensure our code does not accidentally mutate action objects. These would also break our time traveling debuggers if implemented incorrectly
+
+**strictActionSerializability** ensures that any actions are serializable into javascript objects so that they can be saved by devtools to be replayed later if needed.
+
+**strictStateSerializability** ensures the state is also serializable so that it can be stored in local storage and doesn't break devtools
+
+![image-20230215154325248](assets/image-20230215154325248.png)
+
+**Depending on the version of Angular you are using these may already default to true**
