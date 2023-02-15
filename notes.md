@@ -159,7 +159,7 @@ Adding another reducer to define how to modify the auth state
 
 We will create an authentication guard which will redirect the user to the login page if they are not logged in.
 
-Note the @Injectable() decorator on the guard which is very easy to miss. If this is not added you will get an NG0204 error.
+Note the @Injectable() decorator on the guard which is very easy to miss. If this is not added you will get an NG0204 error. The decorator is needed on every angular service.
 
 ![image-20230215111112527](C:\Users\Sophia\AppData\Roaming\Typora\typora-user-images\image-20230215111112527.png)
 
@@ -182,3 +182,17 @@ auth.module.ts
 app.module.ts
 
 **![image-20230215123311747](assets/image-20230215123311747.png)**
+
+### 19. Understanding NgRx Effects
+
+- we subscribe to the actions observable
+- whenever the user login action is dispatched
+- as a side effect we will put the user data into local storage
+
+---
+
+- don't forget to add the @Injectable() as this is another angular service
+
+![image-20230215132850352](assets/image-20230215132850352.png)
+
+![image-20230215132918044](assets/image-20230215132918044.png)
