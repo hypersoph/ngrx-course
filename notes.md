@@ -207,3 +207,13 @@ course.reducers.ts
 ![image-20230217161318994](assets/image-20230217161318994.png)
 
 ![image-20230217161928189](assets/image-20230217161928189.png)
+
+### 36. Optimistic Data Editing - Saving Data in the Background with an Effect
+
+We will save the data to the backend by implementing an effect.
+
+Note that we need to add `{dispatch: false}` since this effect does not produce another action dispatch.
+
+![image-20230217162810780](assets/image-20230217162810780.png)
+
+![image-20230217162530520](assets/image-20230217162530520.png)
