@@ -85,3 +85,25 @@ Have the CourseState extend the EntityState interface
 Notice that we have the entities and the ids properties now
 
 ![image-20230217115254747](assets/image-20230217115254747.png)
+
+### 30. Implementing Reducers Using the NgRx Entity Adapter
+
+Having the courses state in the entity format makes it convenient to query but now it is cumbersome to do common array options on it in this format such as adding courses.
+
+This is why we create an entity adapter. Note that this adapter has many convenience methods shown below.
+
+![image-20230217131147935](assets/image-20230217131147935.png)
+
+We will use the `getInitialState()` method of the adapter to set the initial courses state and then createReducer to create our reducer.
+
+on dispatch of the `allCoursesLoaded` action we want to store all the courses in the store.
+
+![image-20230217133300540](assets/image-20230217133300540.png)
+
+Add the reducer to courses.module.ts
+
+![image-20230217133527143](assets/image-20230217133527143.png)
+
+In the redux devtools on login we can see the courses are successfully being stored in the entity format.
+
+![image-20230217132952314](assets/image-20230217132952314.png)
