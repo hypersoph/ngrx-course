@@ -39,3 +39,19 @@ We have to add a resolver to the routes for the courses module so that the route
 We also have to add the resolver into the module's providers since it is an injectable service 
 
 ![image-20230217110651036](assets/image-20230217110651036.png)
+
+### 28. NgRx Effects
+
+When the loadAllCourses action is dispatched we want to create a side effect of fetching courses from the backend
+
+We then dispatch the `allCoursesLoaded` action to store the fetched data in our store.
+
+![image-20230217113749777](assets/image-20230217113749777.png)
+
+![image-20230217113807675](assets/image-20230217113807675.png)
+
+courses.module.ts
+
+Make sure to import the effects module
+
+![image-20230217113824570](assets/image-20230217113824570.png)
