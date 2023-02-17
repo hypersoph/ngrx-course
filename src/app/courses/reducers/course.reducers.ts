@@ -4,20 +4,22 @@ import { CourseActions } from "../action-types";
 import { compareCourses, Course } from "../model/course";
 
 export interface CourseState extends EntityState<Course> {
-
+  allCoursesLoaded: boolean;
 }
 
 export const adapter = createEntityAdapter<Course>({
   sortComparer: compareCourses
 });
 
-export const initialCoursesState = adapter.getInitialState();
+export const initialCoursesState = adapter.getInitialState({
+  allCoursesLoaded: false
+});
 
 export const coursesReducer = createReducer(
   initialCoursesState,
 
   on(CourseActions.allCoursesLoaded,
-    (state, action) => adapter.addMany(action.courses, state)
+    (state, action) => adapter.addAll(action.courses, {...state, allCoursesLoaded: true})
     )
 );
 

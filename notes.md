@@ -147,3 +147,27 @@ course.reducers.ts
 final
 
 ![image-20230217145414963](assets/image-20230217145414963.png)
+
+### 33. NgRx Data Fetching Solution - Load Data Only if Needed
+
+A problem we need to address with our current implementation is that the courses resolver is going to dispatch the load all courses action again every time we navigate the courses page, including when we navigate somewhere and click the back button. This will create redundant api calls.
+
+We will add a boolean `allCoursesLoaded` flag and add it to the reducer and initial state
+
+courses.reducers.ts
+
+![image-20230217150807430](assets/image-20230217150807430.png)
+
+create a selector so we can use it in the resolver
+
+courses.selectors.ts
+
+![image-20230217150820768](assets/image-20230217150820768.png)
+
+and add another condition to the resolver logic
+
+We also filter the output to only courses loaded
+
+courses.resolver.ts
+
+![image-20230217150839083](assets/image-20230217150839083.png)
