@@ -107,3 +107,21 @@ Add the reducer to courses.module.ts
 In the redux devtools on login we can see the courses are successfully being stored in the entity format.
 
 ![image-20230217132952314](assets/image-20230217132952314.png)
+
+### 31. NgRx Entity Selectors
+
+The NgRx entity adapter has premade methods for generating selectors. We want to select all courses.
+
+course.reducer.ts
+
+![image-20230217144029767](assets/image-20230217144029767.png)
+
+From this selector we make a few more selectors which are needed to populate the home component.
+
+![image-20230217144114654](assets/image-20230217144114654.png)
+
+home.component.ts
+
+Refactoring the home component to select data from the store instead of making requests to the backend.
+
+![image-20230217144143822](assets/image-20230217144143822.png)
