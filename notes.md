@@ -171,3 +171,25 @@ We also filter the output to only courses loaded
 courses.resolver.ts
 
 ![image-20230217150839083](assets/image-20230217150839083.png)
+
+### 34. Optimistically Editing Entity Data - The Edit Course Dialog
+
+We want to edit the course data using a form.
+
+![image-20230217160434714](assets/image-20230217160434714.png)
+
+courses.actions.ts
+
+As usual we start by defining the actions for this functionality. We will only be needing one action `courseUpdated` which when dispatched will modify the data in the store in place and send a background effect to update the data in the backend. 
+
+![image-20230217160109504](assets/image-20230217160109504.png)
+
+edit-course-dialog.component.ts
+
+We should not be calling the backend from the dialog form but modifying the store so replace this accordingly in the constructor.
+
+In the `onSave()` method which is executed on button click we will build an update object and dispatch the action. The course object here will contain the new course details from the form. 
+
+![image-20230217160122899](assets/image-20230217160122899.png)
+
+![image-20230217160135992](assets/image-20230217160135992.png)
