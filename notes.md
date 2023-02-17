@@ -55,3 +55,33 @@ courses.module.ts
 Make sure to import the effects module
 
 ![image-20230217113824570](assets/image-20230217113824570.png)
+
+### 29. Understanding the NgRx Entity Format
+
+Easiest way to store the new courses state inside the store would be to directly store the array of courses under a course key. However this is not practical for common operations such as looking up courses by id.
+
+![image-20230217115455565](assets/image-20230217115455565.png)
+
+A better way is implement a map. This entities property is a map whose keys are the course ids and the values are the courses corresponding to the course ids. There is still a problem with this in that the ordering of the courses might be important and we would need an auxiliary function to transform this map to an array.
+
+![image-20230217115817620](assets/image-20230217115817620.png)
+
+One way of preserving the order would be to an ids array and an auxiliary function would be able to combine the information with the entities map.
+
+This format below is called the Entity format. It consists of a map of the entities and an array that defines the order of the entities.
+
+![image-20230217120029967](assets/image-20230217120029967.png)
+
+Note that our Courses have a sequence number which is information on the order they should be displayed.
+
+![image-20230217120127678](assets/image-20230217120127678.png)
+
+The NgRx Entity module allows us to very easily store our entity data in the Entity format above. 
+
+Have the CourseState extend the EntityState interface
+
+![image-20230217115225457](assets/image-20230217115225457.png)
+
+Notice that we have the entities and the ids properties now
+
+![image-20230217115254747](assets/image-20230217115254747.png)
