@@ -125,3 +125,25 @@ home.component.ts
 Refactoring the home component to select data from the store instead of making requests to the backend.
 
 ![image-20230217144143822](assets/image-20230217144143822.png)
+
+### 32. Entity Adapter Configuration - Understanding sortComparer and selectId
+
+
+
+course.ts
+
+![image-20230217145144610](assets/image-20230217145144610.png)
+
+![image-20230217144923666](assets/image-20230217144923666.png)
+
+we add property sortComparer to our adapter to tell it to use the function `compareCourses` from our Course model as the sorting order for the entities.
+
+The `selectId` property takes a function that returns the intended id field for the entity. We don't need this property because our courses have a field name `id` which ngrx will recognize by default.
+
+course.reducers.ts
+
+![image-20230217144940139](assets/image-20230217144940139.png)
+
+final
+
+![image-20230217145414963](assets/image-20230217145414963.png)
