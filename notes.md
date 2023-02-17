@@ -1,5 +1,7 @@
 ## Section 5: NgRx Entity in Depth
 
+Note - rerun `npm install` in the terminal before starting this section since you are working on a different version of the code.
+
 ### 26. Feature Design - Defining Actions First
 
 We will begin by defining the actions
@@ -193,3 +195,15 @@ In the `onSave()` method which is executed on button click we will build an upda
 ![image-20230217160122899](assets/image-20230217160122899.png)
 
 ![image-20230217160135992](assets/image-20230217160135992.png)
+
+# 35. Optimistic Data Editing - Reducer Implementation and Demo
+
+In this lesson we implement the immediate update of the store when the save button is clicked and the update course action is dispatched.
+
+course.reducers.ts
+
+![image-20230217162033917](assets/image-20230217162033917.png)
+
+![image-20230217161318994](assets/image-20230217161318994.png)
+
+![image-20230217161928189](assets/image-20230217161928189.png)
