@@ -29,3 +29,21 @@ The CourseEntityService is actually a facade service which will allow us to do m
 It brings together all the functionality we need to manage our course entity data.
 
 ![image-20230218170023969](assets/image-20230218170023969.png)
+
+### 39. How Does NgRx Data Work? Transparent Fetching Data in Action
+
+courses.resolver.ts
+
+We inject the `coursesService` and use its `getAll()` method. ngrx data will automatically generate a get request to your backend using common conventions which we will be customizing to suit our application.
+
+Note that observable returned is for a list of courses so we have to use the pipe operator and map it to a boolean.
+
+![image-20230218180716667](assets/image-20230218180716667.png)
+
+courses.module.ts
+
+As before we add the resolver to the routes.
+
+![image-20230218180728083](assets/image-20230218180728083.png)
+
+![image-20230218180737119](assets/image-20230218180737119.png)
