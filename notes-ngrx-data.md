@@ -34,7 +34,7 @@ It brings together all the functionality we need to manage our course entity dat
 
 courses.resolver.ts
 
-We inject the `coursesService` and use its `getAll()` method. ngrx data will automatically generate a get request to your backend using common conventions which we will be customizing to suit our application.
+We inject the `coursesService` and use its `getAll()` method. ngrx data will automatically generate a get request to your backend using common conventions. We will be customizing this method to suit our application.
 
 Note that observable returned is for a list of courses so we have to use the pipe operator and map it to a boolean.
 
@@ -47,3 +47,25 @@ As before we add the resolver to the routes.
 ![image-20230218180728083](assets/image-20230218180728083.png)
 
 ![image-20230218180737119](assets/image-20230218180737119.png)
+
+### 40. NgRx Custom Data Service - Fetching Data From the Backend
+
+courses-data.service.ts
+
+All we need to do to override the default behaviour of `getAll()` is to implement a custom data service.
+
+We customize the getAll() method to send back the content of the payload key from the response to a get request to /api/courses.
+
+![image-20230218183347331](assets/image-20230218183347331.png)
+
+courses.module.ts
+
+Make sure to add the new service to providers and register the service.
+
+![image-20230218183404006](assets/image-20230218183404006.png)
+
+Notice the auto generated actions dispatched by ngrx data will take care of requesting data from the backend and updating the store with the courses.
+
+![image-20230218183117908](assets/image-20230218183117908.png)
+
+![image-20230218183839619](assets/image-20230218183839619.png)
