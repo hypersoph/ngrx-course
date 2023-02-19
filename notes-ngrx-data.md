@@ -69,3 +69,17 @@ Notice the auto generated actions dispatched by ngrx data will take care of requ
 ![image-20230218183117908](assets/image-20230218183117908.png)
 
 ![image-20230218183839619](assets/image-20230218183839619.png)
+
+### 41. Controlling Data Loading with the NgRx Data loaded flag
+
+Note that ngrx data has provided a loaded flag for us
+
+![image-20230219112603757](assets/image-20230219112603757.png)
+
+courses.resolver.ts'
+
+We are going to tap into the loaded observable and ensure that we only make a request to the backend once, if the courses have not been already loaded.
+
+The `filter` and `first` ensure that the transition to the target page do not happen until the resolver has fully loaded the courses.
+
+![image-20230219112626035](assets/image-20230219112626035.png)
