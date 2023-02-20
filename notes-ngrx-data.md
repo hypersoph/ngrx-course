@@ -187,3 +187,33 @@ Refactoring to use the coursesService to fetch the course from the store instead
 Confirming that no network requests are being made
 
 ![image-20230220112721745](assets/image-20230220112721745.png)
+
+### 48. Lessons Pagination using NgRx Data
+
+![image-20230220114924011](assets/image-20230220114924011.png)
+
+courses.component.ts
+
+As usual we access all the lessons in the store using the `entities$` property of our lessonsService.
+
+We want to load the lessons based on the course so we use `withLatestFrom` to access the course from the course observable defined previously. **This operator allows us to combine the lessons and course observables for dependent logic**
+
+We want to get the lessons and load them into the store for the first time as a side effect when we have received a value from the course observable and only on the first page since we have a load more button which will call `loadLessonsPage` for the subsequent lessons. This is done with the `tap` operator.
+
+Finally we want to get the lessons for just the needed course so we filter it with the `map` operator.
+
+![image-20230220114323156](assets/image-20230220114323156.png)
+
+Lastly, we will fix the loading indicator in course.component.html
+
+![image-20230220115300689](assets/image-20230220115300689.png)
+
+Note the line `this.loading$ = this.lessonsService.loading$.pipe(delay(0));`
+
+The delay(0) is necessary to deal with the error message. 
+
+This error message happens because in ngOnInit we set this.loading$ to false initially (line 56), but as a side effect (line 50) of the emission of the first value of the entities observable, we would be setting the loading indicator to true. Therefore the value of the loading indicator would be both true and false in the same run of change detection.
+
+The delay ensures that the loading flag is only going to be affected in the next change detection run.
+
+![image-20230220115533067](assets/image-20230220115533067.png)
