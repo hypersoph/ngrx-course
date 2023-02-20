@@ -161,3 +161,17 @@ Note that the delete method is **optimistic by default** (the deletion will be r
 NgRx takes care of dispatching two actions for the deletion, one to send the request and one to update the store.
 
 ![image-20230220110616801](assets/image-20230220110616801.png)
+
+### 46. Setting up a new Entity - Lesson Entity
+
+With only a few lines we can implement everything we need to support a new entity.
+
+courses.module.ts
+
+![image-20230220112000169](assets/image-20230220112000169.png)
+
+![image-20230220112028968](assets/image-20230220112028968.png)
+
+lesson-entity.service.ts
+
+![image-20230220112015976](assets/image-20230220112015976.png)
