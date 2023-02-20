@@ -103,3 +103,27 @@ courses.module.ts
 fixing the sort order of the courses
 
 ![image-20230219193305456](assets/image-20230219193305456.png)
+
+### 43. NgRx Data CRUD - Optimistic Updates
+
+![image-20230219195609162](assets/image-20230219195609162.png)
+
+edit-course-dialog.component.ts
+
+Replace the http service with our new coursesService. Ngrx data will take care of the actions and effects needed to send a request to the backend and update the store.
+
+![image-20230219195226614](assets/image-20230219195226614.png)
+
+![image-20230219195255346](assets/image-20230219195255346.png)
+
+courses.module.ts
+
+**By default ngrx will not update the store until the request comes back successful.** We want the changes to be reflected immediately ie optimistically. We do this with a configuration change
+
+![image-20230219195321949](assets/image-20230219195321949.png)
+
+Notice that we did not have to write any new actions as ngrx data has taken care of this for us. There is an action to send a put request and an action to update the store with the new course data.
+
+![image-20230219194512889](assets/image-20230219194512889.png)
+
+![image-20230219194536022](assets/image-20230219194536022.png)
