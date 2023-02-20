@@ -83,3 +83,23 @@ We are going to tap into the loaded observable and ensure that we only make a re
 The `filter` and `first` ensure that the transition to the target page do not happen until the resolver has fully loaded the courses.
 
 ![image-20230219112626035](assets/image-20230219112626035.png)
+
+### 42. Querying Store Data with NgRx Data and the entities$ Observable
+
+home.component.ts
+
+Refactoring the home component to stop fetching data from the backend and instead get it from the store using our coursesService.
+
+We don't need the loading flag anymore since that is being handled by ngrx.
+
+![image-20230219193242919](assets/image-20230219193242919.png)
+
+![image-20230219193223954](assets/image-20230219193223954.png)
+
+![image-20230219192613439](assets/image-20230219192613439.png)
+
+courses.module.ts
+
+fixing the sort order of the courses
+
+![image-20230219193305456](assets/image-20230219193305456.png)
