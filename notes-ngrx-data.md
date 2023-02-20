@@ -175,3 +175,15 @@ courses.module.ts
 lesson-entity.service.ts
 
 ![image-20230220112015976](assets/image-20230220112015976.png)
+
+### 47. Implementing the Course Component Using NgRx Data
+
+course.component.ts
+
+Refactoring to use the coursesService to fetch the course from the store instead of making an http request
+
+![image-20230220112748117](assets/image-20230220112748117.png)
+
+Confirming that no network requests are being made
+
+![image-20230220112721745](assets/image-20230220112721745.png)
