@@ -147,3 +147,17 @@ NgRx Takes care of dispatching the necessary actions and making the post request
 ![image-20230220093837628](assets/image-20230220093837628.png)
 
 ![image-20230220093948657](assets/image-20230220093948657.png)
+
+### 45. NgRx Data CRUD - Optimistic Delete
+
+courses-card-list.component.ts
+
+Similarly to the other CRUD operations we use the courseService to implement a deletion in just a single line of code.
+
+Note that the delete method is **optimistic by default** (the deletion will be reflected immediately in the store) so there is no need to implement this yourself. We can subscribe to the observable and add some error handling in case the delete request fails.
+
+![image-20230220111002501](assets/image-20230220111002501.png)
+
+NgRx takes care of dispatching two actions for the deletion, one to send the request and one to update the store.
+
+![image-20230220110616801](assets/image-20230220110616801.png)
