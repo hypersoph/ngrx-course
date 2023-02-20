@@ -127,3 +127,23 @@ Notice that we did not have to write any new actions as ngrx data has taken care
 ![image-20230219194512889](assets/image-20230219194512889.png)
 
 ![image-20230219194536022](assets/image-20230219194536022.png)
+
+### 44. NgRx Data CRUD - Pessimistic Data Creation
+
+We want a post request to add a new course and save the response to the store
+
+edit-course-dialog.component.ts
+
+Our coursesService has an add method for this purpose which returns an observable for the response to the post request. We subscribe to the observable so we can log the new course and close the dialog when the new course is emitted
+
+![image-20230220094259137](assets/image-20230220094259137.png)
+
+Note that the default behaviour is pessimistic ie the dialog will not close until the post request has completed. This behaviour is fine so we will not edit the configuration
+
+NgRx Takes care of dispatching the necessary actions and making the post request using common conventions.
+
+![image-20230220093810345](assets/image-20230220093810345.png)
+
+![image-20230220093837628](assets/image-20230220093837628.png)
+
+![image-20230220093948657](assets/image-20230220093948657.png)
