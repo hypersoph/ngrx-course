@@ -217,3 +217,13 @@ This error message happens because in ngOnInit we set this.loading$ to false ini
 The delay ensures that the loading flag is only going to be affected in the next change detection run.
 
 ![image-20230220115533067](assets/image-20230220115533067.png)
+
+### 49. Switching an NgRx application to OnPush Change Detection
+
+The differences between default and OnPush change detection will only be noticeable in the case were the application needs to show a lot of data to the user or when you have a lot of expressions to be evaluated in the template.
+
+An application with many manual subscriptions would be more difficult to switch to on push change detection, but we are using observables and the async pipe everywhere in our application so the switch is very straightforward.
+
+The only change needed is to add the changeDetection property to the component decorator.
+
+![image-20230220121234524](assets/image-20230220121234524.png)
